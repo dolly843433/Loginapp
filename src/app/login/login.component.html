@@ -1,0 +1,27 @@
+
+
+<section class="login-wrapper py-5">
+  <div class="container p-4 login-inner">
+    <h1 class="display-4 pb-4 fw-bold text-center custom-heading">LOGIN</h1>
+<form>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="email"  [(ngModel)]="model.email_id" name="email">
+  </div>
+  <div class="mb-4">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" [(ngModel)]="model.password"  name="password">
+  </div>
+  <div class="text-center">
+   <button type="submit" class="btn btn-primary" (click)="login()">Submit</button>
+   
+</div>
+<div class="text-center pt-2 ">
+<p>Not a User? <a href="signup" class="text-primary t">Sign up</a></p>  
+</div>
+
+
+
+</form>
+</div>
+</section>

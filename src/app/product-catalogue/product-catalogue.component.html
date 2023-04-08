@@ -1,0 +1,152 @@
+<app-navbar [isLoggedin]="LoginChecker"></app-navbar>
+<li class="nav-item dropdown d-flex flex-row-reverse m-3"  >
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+   All Product
+  </a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item"  (click)="dogetAllclothing()">clothing</a></li>
+    <li><a class="dropdown-item"  (click)="dogetAllfootwear()">footwear</a></li>
+    <li><a class="dropdown-item"  (click)="dogetAllelectronics()">electronics</a></li>
+    <li><a class="dropdown-item"  (click)="dogetAlljewellery()">jewellery</a></li>
+    </ul>
+</li>
+
+<div class="container pt-5">
+  <ng-template #all>
+  <h1 class="d-flex justify-content-center custom-header">ALL PRODUCTS</h1>
+  <div class="container my-5">
+    <div class="row row-cols-1 b-3 row-cols-md-3 g-3">
+      <div *ngFor="let p of product;index as i" class="card" style="width: 16rem;margin:10px;">
+        <img src="../../assets/images/{{p.image | slice:12}}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{p.name}}</h5>
+          <p>{{p.product_category}}</p>
+          <p>{{p.description}}</p>
+          <p>₹ {{p.price}}</p>
+          <div class="cart-view-wrapper">
+            <span class="fa fa-shopping-cart me-3 btn btn-primary" style="cursor: pointer;" id="liveToastBtn" (click)="addtocart(p)" data-bs-toggle="modal" data-bs-target="#exampleModal" *ngIf="LoginChecker==true"></span>
+            <span routerLink="/product_detail/{{p.product_id}}" style="cursor: pointer;" class="btn btn-success fa fa-eye"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<div *ngIf="check==1 ;else footwears">
+  
+  <h1 class="d-flex justify-content-center custom-header">ALL CLOTHING</h1>
+  <div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+      <div *ngFor="let p of clothing" class="card" style="width: 16rem;margin:10px;">
+        <img src="../../assets/images/clothing.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{p.name}}</h5>
+          <p>{{p.product_category}}</p>
+          <p>{{p.description}}</p>
+          <p>₹ {{p.price}}</p>
+          <div class="cart-view-wrapper">
+            <span class="fa fa-shopping-cart me-3 btn btn-primary" style="cursor: pointer;" id="liveToastBtn" (click)="addtocart(p)" data-bs-toggle="modal" data-bs-target="#exampleModal" *ngIf="LoginChecker==true"></span>
+            <span routerLink="/product_detail/{{p.product_id}}" style="cursor: pointer;" class="btn btn-success fa fa-eye"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #footwears >
+  <div *ngIf="check==2;else electronic">
+  <h1 class="d-flex justify-content-center custom-header">ALL FOOTWEAR</h1>
+  <div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+      <div *ngFor="let p of footwear" class="card" style="width: 16rem;margin:10px;">
+        <img src="../../assets/images/Footwear.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{p.name}}</h5>
+          <p>{{p.product_category}}</p>
+          <p>{{p.description}}</p>
+          <p>₹ {{p.price}}</p>
+          <div class="cart-view-wrapper">
+            <span class="fa fa-shopping-cart me-3 btn btn-primary" style="cursor: pointer;" id="liveToastBtn" (click)="addtocart(p)" data-bs-toggle="modal" data-bs-target="#exampleModal" *ngIf="LoginChecker==true"></span>
+            <span routerLink="/product_detail/{{p.product_id}}" style="cursor: pointer;" class="btn btn-success fa fa-eye"></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</ng-template>
+
+<ng-template #electronic >
+  <div *ngIf="check==3;else jewelary">
+  <h1 class="d-flex justify-content-center custom-header">ALL ELECTRONICS</h1>
+  <div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+      <div *ngFor="let p of electronics " class="card" style="width: 16rem;margin:10px;">
+        <img src="../../assets/images/Electronics.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{p.name}}</h5>
+          <p>{{p.product_category}}</p>
+          <p>{{p.description}}</p>
+          <p>₹ {{p.price}}</p>
+          <div class="cart-view-wrapper">
+            <span class="fa fa-shopping-cart me-3 btn btn-primary" style="cursor: pointer;" id="liveToastBtn" (click)="addtocart(p)" data-bs-toggle="modal" data-bs-target="#exampleModal" *ngIf="LoginChecker==true"></span>
+            <span routerLink="/product_detail/{{p.product_id}}" style="cursor: pointer;" class="btn btn-success fa fa-eye"></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</ng-template>
+
+<ng-template #jewelary >
+  <div *ngIf="check==4; else all">
+  <h1 class="d-flex justify-content-center custom-header">ALL JEWELLERY</h1>
+  <div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+      <div *ngFor="let p of jewellery " class="card" style="width: 16rem;margin:10px;">
+        <img src="../../assets/images/Jewellery.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{p.name}}</h5>
+          <p>{{p.product_category}}</p>
+          <p>{{p.description}}</p>
+          <p>₹ {{p.price}}</p>
+          <div class="cart-view-wrapper">
+            <span class="fa fa-shopping-cart me-3 btn btn-primary" style="cursor: pointer;" id="liveToastBtn" (click)="addtocart(p)" data-bs-toggle="modal" data-bs-target="#exampleModal" *ngIf="LoginChecker==true"></span>
+            <span routerLink="/product_detail/{{p.product_id}}" style="cursor: pointer;" class="btn btn-success fa fa-eye"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</ng-template>
+</div>
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="d-flex justify-content-between m-1">
+          <p> Item Added to Cart</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           
+        </div>
+     </div>
+     
+    </div>
+  </div>
+</div>
+
+

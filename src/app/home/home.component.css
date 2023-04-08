@@ -1,0 +1,31 @@
+.banner {
+    background-color: black;
+    color: #f1f1f1;
+    height: 100%;
+  }
+  .banner-inner {
+    align-items: center;
+  }
+  .btn {
+    padding: 0.5em 1.5em;
+    border-radius: 5px;
+  }
+  
+  @media screen and (min-width: 769px) {
+    p {
+      font-size: 1.2em;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .banner {
+      padding: 2em;
+      text-align: center;
+    }
+  }
+  .custom-heading{
+    font-size: 72px;
+    background: -webkit-linear-gradient(#4d71b3 ,#093c94);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

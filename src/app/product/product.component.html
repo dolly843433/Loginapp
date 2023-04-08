@@ -1,0 +1,48 @@
+<app-navbar [isSellerLogin]="isLoginChecker"></app-navbar>
+<section class="product-wrapper py-5">
+  <div class="container py-5 product-inner rounded">
+    <h1 class="display-4 pb-4 fw-bold text-center text-primary">ADD PRODUCT </h1>
+
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label"> Select Catagory </label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="product.product_category"
+          name="product_category">
+          <option value="clothing">clothing</option>
+          <option value="footwear">footwear</option>
+          <option value="electronics">electronics</option>
+          <option value="Jewellery">Jewellery</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label"> Name </label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="product.name" name="name">
+      </div>
+      <div class="mb-3">
+        <label for="Description" class="form-label">Description </label>
+        <input type="text" class="form-control" id="Description" [(ngModel)]="product.description" name="description">
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Price </label>
+        <input type="number" class="form-control" id="price" [(ngModel)]="product.price" name="price">
+      </div>
+
+      <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity </label>
+        <input type="number" class="form-control" id="price" [(ngModel)]="product.quantity" name="quantity">
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload Image</label>
+        <input type="file" class="form-control" id="price" [(ngModel)]="product.image" name="image">
+      </div>
+
+      <div class="text-center">
+        <button class="btn btn-outline-dark" type="submit" (click)="onSubmit()">Submit</button>
+      </div>
+
+
+
+    </form>
+  </div>
+</section>

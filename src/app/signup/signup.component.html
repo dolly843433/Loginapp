@@ -1,0 +1,41 @@
+<section class="login-wrapper py-5">
+    <div class="container py-5 login-inner">
+      <h1 class="display-4 pb-4 fw-bold text-center custom-heading"> SIGNUP</h1>
+  <form class="p-4" #signup="ngForm" (ngSubmit)="registration(signup)">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email Adress</label>
+      <input type="email" class="form-control" id="email" ngModel name="email_id">
+    </div>
+    <div class="mb-3">
+      <label for="first_name" class="form-label">Full Name </label>
+      <input type="first_name" class="form-control" id="first_name" ngModel name="full_name">
+    </div>
+    <div class="mb-3">
+        <label for="adress" class="form-label">Address </label>
+        <input type="adress" class="form-control" id="adress" ngModel name="aderss">
+        </div>
+        <div class="mb-3">
+            <label for="phone_number" class="form-label">Phone Number </label>
+            <input type="text" maxlength="10" minlength="10" class="form-control" id="phone_number"  ngModel name="phone_number">
+            </div>
+            <div class="mb-3">
+                <label for="pin" class="form-label">PIN </label>
+                <input type="pin" class="form-control" id="pin" ngModel name="pin">
+                </div>        
+       <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" ngModel name="password">
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary" >Submit</button>
+       </div>
+   
+        <div class="text-center pt-2 ">
+          <p>Already a User? <a href="login" class="text-primary t">Log in</a></p>  
+          </div>
+  
+  
+  </form>
+  </div>
+  </section>

@@ -1,0 +1,49 @@
+
+<div class="container">
+  <div id="Checkout" class="inline">
+      <h1>Pay Invoice</h1>
+      <div class="card-row">
+          <span class="visa"></span>
+          <span class="mastercard"></span>
+          <span class="amex"></span>
+          <span class="discover"></span>
+      </div>
+      <form>
+          <div class="form-group">
+              <label for="PaymentAmount">Payment amount</label>
+              <div class="amount-placeholder">
+                  <span>₹ </span>
+                  <span>{{total}}</span>
+              </div>
+          </div>
+          <div class="form-group">
+              <label or="NameOnCard">Name on card</label>
+              <input id="NameOnCard" class="form-control" type="text" maxlength="255" [(ngModel)]="name" name="name"/>
+          </div>
+          <div class="form-group">
+              <label for="CreditCardNumber">Card number</label>
+              <input id="CreditCardNumber" class="null card-image form-control" type="number" [(ngModel)]="cardnumber" name="cardnumber" maxlength="12"/>
+          </div>
+          <div class="expiry-date-group form-group ">
+              <label for="ExpiryDate">Expiry date</label>
+              <input id="ExpiryDate" class="form-control" type="month" placeholder="MM / YY"  [(ngModel)]="expire_date" name="expire_date"/>
+          </div>
+          <div class="security-code-group form-group">
+              <label for="SecurityCode">Security code</label>
+              <div class="input-container" >
+                  <input id="SecurityCode" class="form-control" type="number" [(ngModel)]="cvv" name="cvv" maxlength="3"/>
+                  <i id="cvc" class="fa fa-question-circle"></i>
+              </div>
+             
+          </div>
+
+          <button id="PayButton" class="btn btn-block btn-success submit-button" type="submit" (click)="payNow()">
+              <span class="submit-button-lock"></span>
+              <span class="align-middle">Pay ₹{{total}}</span>
+          </button>
+      </form>
+  </div>
+</div>
+
+
+

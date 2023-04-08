@@ -1,0 +1,31 @@
+<h1 class="d-flex justify-content-center mt-4">Search Product</h1>
+
+
+<div class="search-box mt-3">
+  <input class="search-input" type="text" placeholder="Search something.." [(ngModel)]="name" name="name">
+  <button class="search-btn" (click)="doFindByName()"><i class="fas fa-search"></i></button>
+</div>
+
+  <div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-3 d-flex justify-content-center">
+      <div *ngIf="msg=='no';else no" >
+        <div class="alert alert-danger ">
+          No Item Found
+        </div>
+      </div>
+      <ng-template #no>
+        <div *ngFor="let p of model " class="card" style="width: 16rem;margin:10px;">
+          <img src="../../assets/images/clothing.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{p.name}}</h5>
+            <p>{{p.product_category}}</p>
+            <p>{{p.description}}</p>
+            <p>₹ {{p.price}}</p>
+            <a routerLink="/cart" class="btn btn-success" id="liveToastBtn" (click)="addtocart(p)" data-bs-toggle="modal" data-bs-target="#exampleModal" *ngIf="LoginChecker==true">ADD TO CART</a> &nbsp;
+             
+            <a routerLink="/product_detail/{{p.product_id}}" class="btn btn-secondary">VIEW</a>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>

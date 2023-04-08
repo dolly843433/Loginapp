@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center container mt-5">
+                <br>
+                <table align="center" cellspacing="0" cellpadding="6" width="95%" style="border:0;color:#000000;line-height:150%;text-align:left;font:300 14px/30px" border=".5px">
+                  <thead>
+                    <tr style="background:#efefef" >
+                   <th scope="col" width="15%" style="text-align:center;border:1px solid #eee" >Product Id</th>
+                      <th scope="col" width="10%" style="text-align:center;border:1px solid #eee">Product</th>
+                      <th scope="col" width="5%" style="text-align:center;border:1px solid #eee">Quantity</th>
+                      <th scope="col" width="10%" style="text-align:center;border:1px solid #eee">Order Date</th>
+                      <th scope="col" width="5%" style="text-align:center;border:1px solid #eee">Price</th>
+                      <th scope="col" width="10%" style="text-align:center;border:1px solid #eee">Name</th>
+                      <th scope="col" width="15%" style="text-align:center;border:1px solid #eee">Phone_no</th>
+                      <th scope="col" width="30%" style="text-align:center;border:1px solid #eee">Address</th>
+
+                    </tr>
+                  </thead>
+                  <tbody >
+
+                    <tr width="100%" *ngFor="let e of model;index as i">
+                      <td  class="p-2" width="15%" style="text-align:center;vertical-align:middle;border-left:1px solid #eee;border-bottom:1px solid #eee;border-right:0;border-top:0;word-wrap:break-word">
+                      {{e.product_id}}
+                    </td>
+                      <td  class="p-2" width="10%" style="text-align:center;vertical-align:middle;border-left:1px solid #eee;border-bottom:1px solid #eee;border-right:0;border-top:0">
+                        {{product_name[i]}}
+                      </td>
+                      <td  class="p-2" width="5%" style="text-align:center;vertical-align:middle;border-left:1px solid #eee;border-bottom:1px solid #eee;border-right:1px solid #eee;border-top:0"><span>{{e.quantity}}</span></td>
+                      
+                      <td  class="p-2" width="10%" style="text-align:center;vertical-align:middle;border-left:1px solid #eee;border-bottom:1px solid #eee;border-right:1px solid #eee;border-top:0"><span>{{e.date}}</span></td>
+                      <td  class="p-2" width="5%" style="text-align:center;vertical-align:middle;border-left:1px solid #eee;border-bottom:1px solid #eee;border-right:1px solid #eee;border-top:0"><span>{{e.price}}</span></td>
+                      <td  class="p-2" width="10%" style="text-align:center;vertical-align:middle;border-left:1px solid #eee;border-bottom:1px solid #eee;border-right:1px solid #eee;border-top:0"><span>{{e.name}}</span></td>
+                      <td  class="p-2" width="15%" style="text-align:center;vertical-align:middle;border-left:1px solid #eee;border-bottom:1px solid #eee;border-right:1px solid #eee;border-top:0"><span>{{e.phone_number}}</span></td>
+                      <td  class="p-2" width="30%" style="text-align:center;vertical-align:middle;border-left:1px solid #eee;border-bottom:1px solid #eee;border-right:1px solid #eee;border-top:0"><span>{{e.land_mark}},{{e.full_address}},PIN - {{e.pin}}</span></td>
+
+                    </tr>
+                  </tbody>
+
+                  
+                </table>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <br>
+              
+
+                <!-- <table cellspacing="0" cellpadding="6" width="100%" style="color:#000000;line-height:150%;text-align:left;font:300 16px ,Helvetica,Arial,sans-serif" border="0">
+                  <tbody>
+                    <tr>
+                      <td valign="top" style="text-transform:capitalize">
+                        <p style="font-size:12px;line-height:130%">Please call <b> 212456</b> in case of any doubts or questions. Please reply back to email in case of any issues with prices, packing charges, taxes and other menus issues.</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table> -->
+                <br>
+
+                <br>
+                
+                

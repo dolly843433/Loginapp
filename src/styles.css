@@ -1,0 +1,17 @@
+.custom-heading{
+    font-size: 72px;
+    background: -webkit-linear-gradient(#4d71b3 ,#093c94);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.btn-custom{
+    background: #2b5397;
+    color: #fff;
+    border: none;
+}
+.btn-custom:hover{
+    background: #1d3c71;
+    color: #fff;
+    border: none;
+}

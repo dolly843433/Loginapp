@@ -1,0 +1,19 @@
+.login-wrapper{
+    background: linear-gradient(to bottom left,#4d71b3 ,#093c94) !important; 
+}
+.login-inner{
+    background-color: #fff;
+    color: #000;
+    width: 50%;
+    min-width: 400px !important;
+}
+.custom-heading{
+        font-size: 72px;
+        background: -webkit-linear-gradient(#4d71b3 ,#093c94);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+
+.t{
+    text-decoration: none;
+}
